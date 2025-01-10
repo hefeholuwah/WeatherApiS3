@@ -2,7 +2,7 @@ const axios = require("axios");
 const s3 = require("./config/awsConfig");
 require("dotenv").config();
 
-const bucketName = process.env.S3_BUCKET_NAME;
+const bucketName = process.env.S3_BUCKET;
 const apiKey = process.env.OPENWEATHER_API_KEY;
 
 const cities = ["Abuja", "London", "Texas", "Sydney", "Lagos"]; // List of cities
