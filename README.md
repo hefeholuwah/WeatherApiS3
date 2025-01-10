@@ -1,5 +1,5 @@
-```markdown
-# 30 Days DevOps Challenge - Weather Dashboard  
+# 30 Days DevOps Challenge - Weather Dashboard
+
 **Day 1: Building a Weather Data Collection System Using AWS S3 and OpenWeather API**
 
 ## Project Overview  
@@ -29,7 +29,6 @@ Clone this repository to your local system:
 git clone https://github.com/hefeholuwah/WeatherApiS3.git
 cd WeatherApiS3
 ```
-
 ---
 
 ### 3. Install Dependencies  
@@ -118,4 +117,3 @@ Feel free to fork this repository and make contributions! Open issues or submit 
 - [OpenWeather API](https://openweathermap.org/api)  
 
 
-```
