@@ -1,106 +1,89 @@
-Here’s the complete and properly formatted `README.md` file for your project:
-
 ```markdown
 # 30 Days DevOps Challenge - Weather Dashboard  
-**Day 1: Building a Weather Data Collection System using AWS S3 and OpenWeather API**
+**Day 1: Building a Weather Data Collection System Using AWS S3 and OpenWeather API**
 
----
-
-## Overview  
-Welcome to the **30 Days DevOps Challenge**! This project marks **Day 1** of the challenge, where we focus on building a **Weather Data Collection System**. The system retrieves weather information for a list of cities using the **OpenWeather API**, displays the data, and stores it in an AWS S3 bucket.
-
-This project introduces key concepts in **DevOps** such as automation, cloud storage, and API integration.
+## Project Overview  
+This project is part of the **30 Days DevOps Challenge**. On Day 1, we built a system to collect weather data for multiple cities using the OpenWeather API, store the data locally, and upload it to an AWS S3 bucket. The system is implemented in Node.js and demonstrates the use of environment variables, API integration, and AWS SDK for S3 operations.
 
 ---
 
 ## Features  
-- Dynamically fetches weather data for a list of cities.
-- Displays the collected weather data in the terminal.
-- Automatically creates an AWS S3 bucket if it does not exist.
-- Stores the weather data in a structured JSON format in the S3 bucket.
+- Fetches weather data for a list of cities using OpenWeather API.  
+- Automatically creates an AWS S3 bucket if it doesn't exist.  
+- Uploads the collected weather data to the created S3 bucket.  
 
 ---
 
-## Prerequisites  
-1. **Node.js** installed on your system.  
-2. An **AWS account** with credentials configured.  
-3. An **OpenWeather API key**.  
+## Setup Instructions  
+
+### 1. Prerequisites  
+- [Node.js](https://nodejs.org/) installed on your system.  
+- An AWS account with access credentials.  
+- An OpenWeather API key.  
 
 ---
 
-## Directory Structure  
-```plaintext
-WEATHERAPIS3/
-├── .env                  # Environment variables for sensitive data
-├── package.json          # Project dependencies and scripts
-├── package-lock.json     # Lock file for dependencies
-├── config/
-│   └── awsConfig.js      # AWS S3 configuration
-├── weather.js            # Main script for fetching and storing weather data
-└── README.md             # Project documentation
-```
-
----
-
-## Setup Instructions
-
-### 1. Clone the Repository
+### 2. Clone the Repository  
+Clone this repository to your local system:  
 ```bash
-git clone https://github.com/your-username/weather-dashboard.git
-cd weather-dashboard
+git clone https://github.com/hefeholuwah/WeatherApiS3.git
+cd WeatherApiS3
 ```
 
-### 2. Install Dependencies
+---
+
+### 3. Install Dependencies  
+Run the following command to install all the required dependencies:  
 ```bash
 npm install
 ```
 
-### 3. Create a `.env` File
-Create a `.env` file in the root directory of the project and add the following environment variables:
+---
 
+### 4. Create a `.env` File  
+Create a `.env` file in the root of the project directory and populate it with the following values:  
 ```plaintext
 AWS_ACCESS_KEY_ID=<your-aws-access-key-id>
 AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key>
 AWS_REGION=<your-aws-region>
 OPENWEATHER_API_KEY=<your-openweather-api-key>
-S3_BUCKET_NAME=weather-data-bucket
+S3_BUCKET=weather-data-bucket
 ```
 
-Replace the placeholders (`<your-aws-access-key-id>`, `<your-aws-secret-access-key>`, `<your-aws-region>`, `<your-openweather-api-key>`) with your actual AWS and OpenWeather API credentials.
+- Replace `<your-aws-access-key-id>` and `<your-aws-secret-access-key>` with your AWS IAM credentials.  
+- Replace `<your-aws-region>` with the AWS region (e.g., `us-west-2`).  
+- Replace `<your-openweather-api-key>` with your OpenWeather API key.
 
-### 4. Run the Script
+---
+
+### 5. Run the Script  
+Execute the following command to run the script:  
 ```bash
 node weather.js
 ```
 
 ---
 
-## What Happens When You Run the Script?
+## What Happens When You Run the Script?  
+1. **Bucket Creation**:  
+   - The script checks if the specified S3 bucket exists.  
+   - If not, it creates the bucket in the specified region.  
 
-### 1. **Bucket Creation**
-- The script checks if the specified S3 bucket exists.
-- If the bucket does not exist, it creates the bucket in the specified AWS region.
+2. **Weather Data Fetching**:  
+   - The script fetches weather reports for a predefined list of cities from the OpenWeather API.  
+   - The data includes temperature, humidity, weather condition, and more.  
 
-### 2. **Weather Data Fetching**
-- The script fetches weather reports for a predefined list of cities from the OpenWeather API.
-- The data includes:
-  - Temperature
-  - Humidity
-  - Weather condition
-  - And more.
+3. **Data Storage**:  
+   - The weather data is saved locally in JSON format.  
+   - The data file is then uploaded to the created S3 bucket.  
 
-### 3. **Data Storage**
-- The weather data is saved locally in JSON format.
-- The data file is then uploaded to the created S3 bucket.
-
-### 4. **Console Output**
-- The script outputs the weather data in the console for your reference.
+4. **Console Output**:  
+   - The script outputs the weather data in the console for your reference.  
 
 ---
 
-## Example Output
-Here’s an example of what the script logs in the console:
-
+## Example Output  
+Here’s an example of what the script logs in the console:  
 ```json
 {
   "city": "London",
@@ -112,27 +95,27 @@ Here’s an example of what the script logs in the console:
 
 ---
 
-## Notes
-- Ensure that the `.env` file is in the root directory of the project.
-- Do not commit the `.env` file to version control (e.g., Git) as it contains sensitive credentials. Add it to your `.gitignore` file if necessary.
-
-### Example `.gitignore` File
+## Folder Structure  
 ```plaintext
-node_modules/
-.env
+WeatherApiS3/
+├── weather.js            # Main script
+├── config/
+│   └── awsconfig.js     # AWS S3 setup and utility functions
+├── .env                # Environment variables file
+├── package.json        # Node.js dependencies
+├── README.md           # Documentation
 ```
 
 ---
 
-## Contributing
-Feel free to contribute to this project by opening issues or submitting pull requests. Let’s make this project even better!
+## Contributing  
+Feel free to fork this repository and make contributions! Open issues or submit pull requests to help improve the project.  
 
 ---
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Acknowledgments  
+- [AWS SDK for JavaScript](https://aws.amazon.com/sdk-for-javascript/)  
+- [OpenWeather API](https://openweathermap.org/api)  
 
----
 
 ```
-
