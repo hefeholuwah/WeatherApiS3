@@ -1,5 +1,8 @@
 # 30 Days DevOps Challenge - Weather Dashboard
 
+![weather API using Boto3  (1)](https://github.com/user-attachments/assets/848f45a9-b504-41dd-9d86-472689c971e3)
+
+
 **Day 1: Building a Weather Data Collection System Using AWS S3 and OpenWeather API**
 
 ## Project Overview  
